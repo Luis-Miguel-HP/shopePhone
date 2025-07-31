@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { productos } from './db/db';
 
+
+const prod = productos;
+
+console.log(prod) 
 </script>
 
 <template>
