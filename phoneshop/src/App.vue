@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+
 import { productos } from './db/db';
+import Producto from './components/producto.vue';
 
 
 const prod = productos;
@@ -45,51 +46,23 @@ console.log(prod)
     </div>
   </section>
 
-  <!-- PRODUCTOS -->
+
  <!-- PRODUCTOS -->
 <section id="productos" class="py-20 bg-white-100">
   <h2 class="text-center mb-10 text-2xl font-bold">Nuestros teléfonos</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
-    <!-- Teléfono 1 -->
-   <div class="flex gap-6">
-      <div>
-        <img class="w-48 h-auto rounded-lg" src="../public/img/iphone 15.webp" alt="iPhone 15">
-      </div>
-      <div class="flex flex-col gap-5 w-[200px]">
-        <h2 class="text-xl font-bold">iPhone 15</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        <p class="text-2xl text-blue-700 font-bold">$300</p>
-        <button class="inline-block text-white font-bold bg-black font-semibold  text-sm  px-5 py-3  rounded-lg">AGREGAR AL CARRITO</button>
-      </div>
-    </div>
-
-    <!-- Teléfono 2 -->
-    <div class="flex gap-6">
-      <div>
-        <img class="w-48 h-auto rounded-lg" src="../public/img/iphone 15.webp" alt="iPhone 15">
-      </div>
-      <div class="flex flex-col gap-5 w-[200px]">
-        <h2 class="text-xl font-bold">iPhone 15</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        <p class="text-2xl text-blue-700 font-bold">$300</p>
-        <button class="inline-block text-white font-bold bg-black font-semibold  text-sm  px-5 py-3  rounded-lg">AGREGAR AL CARRITO</button>
-      </div>
-    </div>
-
-    <div class="flex gap-6">
-      <div>
-        <img class="w-48 h-auto rounded-lg" src="../public/img/iphone 15.webp" alt="iPhone 15">
-      </div>
-      <div class="flex flex-col gap-5 w-[200px]">
-        <h2 class="text-xl font-bold">iPhone 15</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        <p class="text-2xl text-blue-700 font-bold">$300</p>
-        <button class="inline-block text-white font-bold bg-black font-semibold  text-sm  px-5 py-3  rounded-lg">AGREGAR AL CARRITO</button>
-      </div>
-    </div>
+    <producto
     
+    v-for="producto in prod"
+    :producto = "producto"
+    />
+
+
   </div>
 </section>
+
+
+
 
 
   <!-- FOOTER -->
