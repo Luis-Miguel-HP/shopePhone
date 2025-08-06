@@ -18,7 +18,7 @@ const {producto} = defineProps({
       <div class="flex flex-col gap-5 w-[200px]">
         <h2 class="text-xl font-bold">{{ producto.nombre }}</h2>
         <p>{{ producto.descripcion }}</p>
-        <p class="text-2xl text-blue-700 font-bold">$300</p>
+        <p class="text-2xl text-blue-700 font-bold">${{ producto.precio }}</p>
         <button class="inline-block text-white font-bold bg-blue-500 font-semibold  text-sm  px-5 py-3  rounded-lg">AGREGAR AL CARRITO</button>
       </div>
     </div>

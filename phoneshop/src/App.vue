@@ -61,10 +61,6 @@ console.log(prod)
   </div>
 </section>
 
-
-
-
-
   <!-- FOOTER -->
   <footer id="contacto" class="bg-black text-white py-10 mt-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
