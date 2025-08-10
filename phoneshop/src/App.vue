@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import { productos } from './db/db'
+import{ref} from "vue"
 import Producto from './components/producto.vue'
 
 const prod = productos
+const cell = ref<any[]>([]);
 
+const agregarCarrito = (phone: any) => {
+  phone.cantidad = 1;
+  cell.value.push(phone);
+  console.log(phone) 
 
-const agregarCarrito = () =>{
-  console.log("hola")
-}
+};
+
 </script>
 
 <template>

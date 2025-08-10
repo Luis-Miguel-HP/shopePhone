@@ -29,7 +29,7 @@ defineEmits(["enviar"])
         <button 
         class="inline-block text-white font-bold bg-blue-500 font-semibold 
          text-sm  px-5 py-3  rounded-lg"
-         @click="$emit ('enviar') "
+         @click="$emit ('enviar',producto) "
          >AGREGAR AL CARRITO</button>
       </div>
     </div>
