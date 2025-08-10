@@ -3,7 +3,11 @@ import { productos } from './db/db'
 import Producto from './components/producto.vue'
 
 const prod = productos
-console.log(prod)
+
+
+const agregarCarrito = () =>{
+  console.log("hola")
+}
 </script>
 
 <template>
@@ -123,10 +127,13 @@ console.log(prod)
   <section id="productos" class="bg-white-100 py-20">
     <h2 class="mb-10 text-center text-2xl font-bold">Nuestros teléfonos</h2>
     <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+
+      <!-- componente que contiene como se renderizan los productos -->
       <Producto
         v-for="producto in prod"
         :key="producto.id ?? producto.nombre"
         :producto="producto"
+        @enviar="agregarCarrito"
       />
     </div>
   </section>
