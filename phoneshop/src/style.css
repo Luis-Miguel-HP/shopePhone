@@ -1,0 +1,95 @@
+/* Contenedor del icono del carrito + dropdown */
+.carrito {
+  position: relative;       /* clave para anclar el absolute interno */
+  display: inline-block;
+  z-index: 100;
+}
+
+/* Icono del carrito (el <img> inmediato dentro de .carrito) */
+.carrito > img {
+  width: 32px;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* Panel del carrito (dropdown) oculto por defecto */
+.carrito #carrito {
+  display: none;
+  position: absolute;
+  top: 100%;                /* justo debajo del icono */
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  min-width: 500px;
+  height: 300px;
+  width: max-content;       /* similar a fit-content, con mejor soporte */
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  border-radius: 8px;
+}
+
+/* Mostrar el dropdown al pasar el mouse (desktop) */
+@media (hover: hover) {
+  .carrito:hover #carrito {
+    display: block;
+  }
+}
+
+/* Imágenes dentro del listado del carrito */
+#carrito img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Botones dentro del panel del carrito (versión sin Bootstrap) */
+#carrito .btn-dark,
+#carrito .btn-danger {
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* Equivalentes “Tailwind-like” sin Bootstrap */
+#carrito .btn-dark {
+  background: #111827;      /* gris-900 */
+  color: #fff;
+}
+
+#carrito .btn-dark:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+#carrito .btn-danger {
+  background: #dc2626;      /* rojo-600 */
+  color: #fff;
+}
+
+#carrito .btn-danger:hover {
+  background: #b91c1c;      /* rojo-700 */
+}
+
+/* Ajustes finos de los botones +/- */
+#carrito .btn-dark.quant {
+  padding: 0 6px;
+  margin: 0 4px;
+}
+
+/* Tabla interna del carrito (si la mantienes) */
+#carrito table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#carrito th,
+#carrito td {
+  padding: 6px 4px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 14px;
+}
+

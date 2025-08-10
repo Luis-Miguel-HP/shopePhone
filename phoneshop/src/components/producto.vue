@@ -27,6 +27,5 @@ const {producto} = defineProps({
 
 
 
-
 <style scoped>
 </style>
