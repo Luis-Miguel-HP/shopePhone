@@ -1,9 +1,25 @@
 <script setup lang="ts">
+type Phone = {
+  nombre: string
+  imagen: string
+  precio: number
+  cantidad?: number
+  id?: string | number
+}
 
-const props = defineProps({
-    cell: Array
-})
+const props = defineProps<{ cell: Phone[] }>()
+
+
+
+const emit = defineEmits<{ (e: 'delete', index: number): void }>()
+
+function borrar(index: number) {
+  emit('delete', index)
+}
 </script>
+
+
+
 
 
 
@@ -51,7 +67,7 @@ const props = defineProps({
             <tbody class="align-middle text-sm">
               <tr
               
-              v-for="phone in cell">
+              v-for="(phone, index) in cell">
                 <td class="px-2 py-2">
                   <img :src="'/img/Telefonos/'+ phone?.imagen+'.webp'" class="h-20 w-20  object-cover" />
                 </td>
@@ -70,6 +86,8 @@ const props = defineProps({
                 </td>
                 <td class="px-2 py-2">
                   <button
+
+                  @click="$emit ('eliminar', index)"
                     type="button"
                     class="inline-flex items-center justify-center rounded-md bg-red-600 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-red-700"
                   >

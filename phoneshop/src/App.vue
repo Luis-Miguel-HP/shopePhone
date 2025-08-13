@@ -5,7 +5,7 @@ import Producto from './components/producto.vue'
 import Header from './components/header.vue'
 
 const prod = productos
-const cell = ref<any[]>([]);
+const cell = ref<object[]>([]);
 
 const agregarCarrito = (phone: any) => {
   phone.cantidad = 1;
@@ -13,6 +13,10 @@ const agregarCarrito = (phone: any) => {
   console.log(phone) 
 
 };
+
+function eliminar(){
+  
+}
 
 </script>
 
@@ -22,6 +26,8 @@ const agregarCarrito = (phone: any) => {
 <!-- Componente de cabecera -->
  <Header
  :cell = "cell"
+
+@eliminar="cell.splice($event, 1)"
  
  />
 
