@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { productos } from './db/db'
-import{ref} from "vue"
+import{computed, ref} from "vue"
 import Producto from './components/producto.vue'
 import Header from './components/header.vue'
 
 const prod = productos
-const cell = ref<object[]>([]);
+const cell = ref<any[]>([]);
 
 const agregarCarrito = (phone: any) => {
   phone.cantidad = 1;
@@ -13,10 +13,12 @@ const agregarCarrito = (phone: any) => {
   console.log(phone) 
 
 };
+console.log(cell) 
 
-function eliminar(){
-  
-}
+
+const total = computed(() =>
+  cell.value.reduce((acc, item) => acc+item.precio,0))
+
 
 </script>
 
@@ -26,6 +28,7 @@ function eliminar(){
 <!-- Componente de cabecera -->
  <Header
  :cell = "cell"
+ :total = "total"
 
 @eliminar="cell.splice($event, 1)"
  

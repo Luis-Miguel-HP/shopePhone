@@ -7,15 +7,15 @@ type Phone = {
   id?: string | number
 }
 
-const props = defineProps<{ cell: Phone[] }>()
+const props = defineProps<{ cell: Phone[], total: number }>()
 
 
-
-const emit = defineEmits<{ (e: 'delete', index: number): void }>()
+const emit = defineEmits(['eliminar'])
 
 function borrar(index: number) {
-  emit('delete', index)
+  emit('eliminar', index)
 }
+
 </script>
 
 
@@ -69,10 +69,10 @@ function borrar(index: number) {
               
               v-for="(phone, index) in cell">
                 <td class="px-2 py-2">
-                  <img :src="'/img/Telefonos/'+ phone?.imagen+'.webp'" class="h-20 w-20  object-cover" />
+                  <img :src="'/img/Telefonos/'+ phone.imagen+'.webp'" class="h-20 w-20  object-cover" />
                 </td>
-                <td class="px-2 py-2"> {{ phone?.nombre }} </td>
-                <td class="px-2 py-2 font-semibold">{{ phone?.precio }} </td>
+                <td class="px-2 py-2"> {{ phone.nombre }} </td>
+                <td class="px-2 py-2 font-semibold">{{ phone.precio }} </td>
                 <td class="px-2 py-2">
                   <div class="flex items-center gap-2">
                     <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-gray-800">
@@ -99,7 +99,7 @@ function borrar(index: number) {
           </table>
 
           <p class="mt-3 text-right text-sm">
-            Total pagar: <span class="font-semibold">$0.00</span>
+            Total pagar: <span class="font-semibold">$ {{ total }}</span>
           </p>
           <button
             type="button"
