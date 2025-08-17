@@ -15,13 +15,7 @@ const emit = defineEmits(['eliminar'])
 function borrar(index: number) {
   emit('eliminar', index)
 }
-
 </script>
-
-
-
-
-
 
 
 <template>
@@ -48,7 +42,7 @@ function borrar(index: number) {
         <!-- Dropdown -->
         <div
           id="carrito"
-          class="absolute right-0 top-full z-50 hidden min-w-[420px] w-max rounded-xl bg-white p-4 text-black shadow-xl group-hover:block group-focus-within:block"
+          class="absolute right-0 top-full z-50 hidden min-w-[700px] w-[800px] md:w-[36rem] max-h-100 overflow-y-auto overflow-x-auto  rounded-xl bg-white p-4 text-black shadow-xl group-hover:block group-focus-within:block"
         >
          
 

@@ -21,8 +21,9 @@
   right: 0;
   background-color: #fff;
   padding: 10px;
-  min-width: 500px;
-  height: 300px;
+  min-width: 600px;
+  min-height: 500;
+  max-height: 900px;
   width: max-content;       /* similar a fit-content, con mejor soporte */
   box-shadow: 0 10px 25px rgba(0,0,0,.15);
   border-radius: 8px;

@@ -8,7 +8,7 @@ const prod = productos
 const cell = ref<any[]>([]);
 
 const agregarCarrito = (phone: any) => {
-  phone.cantidad = 1;
+  phone.cantidad = 2;
   cell.value.push(phone);
   console.log(phone) 
 
