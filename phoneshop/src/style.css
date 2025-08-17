@@ -1,6 +1,6 @@
 /* Contenedor del icono del carrito + dropdown */
 .carrito {
-  position: relative;       /* clave para anclar el absolute interno */
+  position: relative;       
   display: inline-block;
   z-index: 100;
 }
@@ -17,14 +17,14 @@
 .carrito #carrito {
   display: none;
   position: absolute;
-  top: 100%;                /* justo debajo del icono */
+  top: 100%;               
   right: 0;
   background-color: #fff;
   padding: 10px;
   min-width: 600px;
   min-height: 500;
   max-height: 900px;
-  width: max-content;       /* similar a fit-content, con mejor soporte */
+  width: max-content;      
   box-shadow: 0 10px 25px rgba(0,0,0,.15);
   border-radius: 8px;
 }
@@ -56,7 +56,7 @@
 
 /* Equivalentes “Tailwind-like” sin Bootstrap */
 #carrito .btn-dark {
-  background: #111827;      /* gris-900 */
+  background: #111827;      
   color: #fff;
 }
 
@@ -66,12 +66,12 @@
 }
 
 #carrito .btn-danger {
-  background: #dc2626;      /* rojo-600 */
+  background: #dc2626;      
   color: #fff;
 }
 
 #carrito .btn-danger:hover {
-  background: #b91c1c;      /* rojo-700 */
+  background: #b91c1c;      
 }
 
 /* Ajustes finos de los botones +/- */

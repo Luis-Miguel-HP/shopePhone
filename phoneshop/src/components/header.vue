@@ -10,7 +10,7 @@ type Phone = {
 const props = defineProps<{ cell: Phone[], total: number }>()
 
 
-const emit = defineEmits(['eliminar'])
+const emit = defineEmits(['eliminar', "vaciar"])
 
 function borrar(index: number) {
   emit('eliminar', index)
@@ -98,6 +98,7 @@ function borrar(index: number) {
           <button
             type="button"
             class="mt-3 w-full rounded-md bg-gray-900 p-2 text-sm font-medium text-white transition hover:bg-gray-800"
+            @click="$emit ('vaciar')"
           >
             Vaciar Carrito
           </button>

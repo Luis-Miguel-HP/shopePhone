@@ -19,7 +19,9 @@ console.log(cell)
 const total = computed(() =>
   cell.value.reduce((acc, item) => acc+item.precio,0))
 
-
+function limpiarCarrito(){
+  cell.value = []
+}
 </script>
 
 <template>
@@ -31,6 +33,7 @@ const total = computed(() =>
  :total = "total"
 
 @eliminar="cell.splice($event, 1)"
+@vaciar="limpiarCarrito"
  
  />
 
