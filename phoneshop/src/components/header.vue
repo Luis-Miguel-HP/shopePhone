@@ -72,7 +72,7 @@ function borrar(index: number) {
                     <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-gray-800">
                       −
                     </button>
-                    <span class="select-none">1</span>
+                    <span class="select-none">{{ phone.cantidad }}</span>
                     <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-gray-800">
                       +
                     </button>

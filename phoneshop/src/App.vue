@@ -8,16 +8,26 @@ const prod = productos
 const cell = ref<any[]>([]);
 
 const agregarCarrito = (phone: any) => {
-  phone.cantidad = 2;
-  cell.value.push(phone);
-  console.log(phone) 
+
+  // Evitar elementos duplicados:
+
+  const existeCarrito = cell.value.findIndex(ind => ind.id === phone.id)
+  if(existeCarrito >= 0 ){
+      cell.value[existeCarrito].cantidad++;
+  }else{
+    phone.cantidad = 1;
+    cell.value.push(phone);
+
+  }
+
 
 };
 console.log(cell) 
 
 
 const total = computed(() =>
-  cell.value.reduce((acc, item) => acc+item.precio,0))
+  cell.value.reduce((acc, item) => acc+item.precio * item.cantidad  ,0))
+
 
 function limpiarCarrito(){
   cell.value = []
