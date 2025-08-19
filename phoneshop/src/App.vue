@@ -3,6 +3,7 @@ import { productos } from './db/db'
 import{computed, ref} from "vue"
 import Producto from './components/producto.vue'
 import Header from './components/header.vue'
+import Contacto from './components/contacto.vue'
 
 const prod = productos
 const cell = ref<any[]>([]);
@@ -32,6 +33,13 @@ const total = computed(() =>
 function limpiarCarrito(){
   cell.value = []
 }
+
+
+function aumentarProducto(index : any){
+  const valor = cell.value.findIndex(ind => ind.id == index)
+    cell.value[valor].cantidad++  
+
+}
 </script>
 
 <template>
@@ -44,6 +52,7 @@ function limpiarCarrito(){
 
 @eliminar="cell.splice($event, 1)"
 @vaciar="limpiarCarrito"
+@aumentar="aumentarProducto"
  
  />
 
@@ -61,6 +70,10 @@ function limpiarCarrito(){
       />
     </div>
   </section>
+
+  <!-- Seccion de contactos -->
+
+  <Contacto/>
 
   <!-- FOOTER -->
   <footer id="contacto" class="mt-12 bg-black py-10 text-white">
