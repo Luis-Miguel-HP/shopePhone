@@ -10,7 +10,7 @@ type Phone = {
 const props = defineProps<{ cell: Phone[], total: number }>()
 
 
-const emit = defineEmits(['eliminar', "vaciar","aumentar"])
+const emit = defineEmits(['eliminar', "vaciar","aumentar","disminuir"])
 
 function borrar(index: number) {
   emit('eliminar', index)
@@ -69,8 +69,10 @@ function borrar(index: number) {
                 <td class="px-2 py-2 font-semibold">{{ phone.precio }} </td>
                 <td class="px-2 py-2">
                   <div class="flex items-center gap-2">
-                    <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-gray-800">
-                      −
+                    <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-gray-800"
+                    @click="$emit('disminuir', phone.id)"
+                    >
+                    −
                     </button>
                     <span class="select-none">{{ phone.cantidad }}</span>
                     <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-gray-800"
@@ -84,7 +86,7 @@ function borrar(index: number) {
                 <td class="px-2 py-2">
                   <button
 
-                  @click="$emit ('eliminar', phone.id)"
+                  @click="$emit ('eliminar')"
                     type="button"
                     class="inline-flex items-center justify-center rounded-md bg-red-600 px-2.5 py-1.5 text-xs font-medium text-white transition hover:bg-red-700"
                   >

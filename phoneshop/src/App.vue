@@ -40,6 +40,11 @@ function aumentarProducto(index : any){
     cell.value[valor].cantidad++  
 
 }
+function descrementaProducto(index : any){
+  const valor = cell.value.findIndex(ind => ind.id == index)
+    cell.value[valor].cantidad--; 
+
+}
 </script>
 
 <template>
@@ -53,6 +58,7 @@ function aumentarProducto(index : any){
 @eliminar="cell.splice($event, 1)"
 @vaciar="limpiarCarrito"
 @aumentar="aumentarProducto"
+@disminuir="descrementaProducto"
  
  />
 
